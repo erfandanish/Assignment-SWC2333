@@ -1,0 +1,76 @@
+/**
+ * Program Description : To manage flower shop inventory efficiently
+ * Programmer : Erfan Danish
+ * Date : 22/2/2024
+ */
+import javax.swing.JOptionPane;
+
+public class Flower {
+    private String name;
+    private String color;
+    private double price;
+    private int quantity;
+
+    public Flower() {
+        name = null;
+        color = null;
+        price = 0.00;
+        quantity = 0;
+    }
+
+    public Flower(String name, String color, double price, int quantity) {
+        this.name = name;
+        this.color = color;
+        this.price = price;
+        this.quantity = quantity;
+    }
+
+    public void setFlower(String name, String color, double price, int quantity) {
+        this.name = name;
+        this.color = color;
+        this.price = price;
+        this.quantity = quantity;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public String toString() {
+        return ("\nFlower Name = " + getName() + "\nColor = " + getColor() + "\nPrice = " + getPrice() + "\nQuantity = " + getQuantity());
+
+    }
+
+    public void display() {
+        System.out.println("\nThe name of this flower is " + name + "\nThe color of this flower is " + color
+                + "\nThe price is " + price + "\nThe quantity is " + quantity);
+    }
+}
