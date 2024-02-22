@@ -1,0 +1,83 @@
+import javax.swing.*;
+
+public class FlowerShop {
+    private String name;
+    private String color;
+    private double price;
+    private int quantity;
+
+    public FlowerShop() 
+    {
+    
+    }
+
+    public FlowerShop(String name, String color, double price, int quantity) {
+        this.name = name;
+        this.color = color;
+        this.price = price;
+        this.quantity = quantity;
+    }
+
+    
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public double calculateValue() {
+        return price * quantity;
+    }
+
+   
+    public String toString() {
+        return "FlowerShop [Name: " + name + ", Color: " + color + ", Price: RM" + price + ", Quantity: " + quantity + "]";
+    }
+
+    public static void main(String[] args) {
+        FlowerShop[] flowerInventory = new FlowerShop[10];
+        double sum = 0;
+
+        for (int i = 0; i < 10; i++) {
+            String name = JOptionPane.showInputDialog("Name:");
+            String color = JOptionPane.showInputDialog("Color:");
+            String str = JOptionPane.showInputDialog("Price:");
+            double price = Double.parseDouble(str);
+            str = JOptionPane.showInputDialog("Quantity:");
+            int quantity = Integer.parseInt(str);
+
+            flowerInventory[i] = new FlowerShop(name, color, price, quantity);
+
+            System.out.println(flowerInventory[i]);
+            sum += flowerInventory[i].getPrice() * flowerInventory[i].getQuantity();
+        }
+
+        System.out.println("Total value of flower inventory: RM" + sum);
+    }
+}
